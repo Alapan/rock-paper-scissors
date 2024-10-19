@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from './styles/GameButton.module.css';
+import styles  from './styles/GameButton.module.css';
 
 interface GameButtonProps {
   assetName: string;
@@ -9,14 +9,15 @@ const GameButton = ({ assetName }: GameButtonProps) => {
   return (
     <>
       {assetName && (
-        <button className={styles.gameButtonCls}>
+        <div className={styles.gameButton}>
           <Image
             src={`/${assetName}.svg`}
-            alt='Image to represent selected option, i.e. rock/paper/scissor'
-            height={130}
-            width={130}
+            alt='Image to represent selected shape, i.e. rock/paper/scissor'
+            width={0}
+            height={0}
+            style={{ width: '55%', height: 'auto' }}
           />
-        </button>
+        </div>
       )}
     </>
   )
