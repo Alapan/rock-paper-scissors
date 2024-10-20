@@ -1,7 +1,13 @@
 import { useEffect, useState } from 'react';
 import GameButton from './GameButton';
 
-const ButtonWithChangingLabels = () => {
+interface GameButtonWithChangingLabelsProps {
+  pathname: string;
+}
+
+const GameButtonWithChangingLabels = ({
+  pathname
+}: GameButtonWithChangingLabelsProps) => {
   const assetNames: string[] = ['rock', 'paper', 'scissor'];
   const [assetName, setAssetName] = useState(assetNames[0]);
 
@@ -19,7 +25,7 @@ const ButtonWithChangingLabels = () => {
 
   }, []);
 
-  return <GameButton assetName={assetName} />;
+  return <GameButton assetName={assetName} pathname={pathname}/>;
 };
 
-export default ButtonWithChangingLabels;
+export default GameButtonWithChangingLabels;

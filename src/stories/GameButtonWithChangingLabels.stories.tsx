@@ -1,4 +1,5 @@
 import { Story, StoryDefault } from '@ladle/react';
+import { ComponentProps } from 'react';
 import GameButtonWithChangingLabels from '@/app/components/GameButtonWithChangingLabels';
 
 const meta: StoryDefault<typeof GameButtonWithChangingLabels> = {
@@ -7,6 +8,12 @@ const meta: StoryDefault<typeof GameButtonWithChangingLabels> = {
 
 export default meta;
 
-export const DefaultButton: Story = () => {
-  return <GameButtonWithChangingLabels />;
+type Props = ComponentProps<typeof GameButtonWithChangingLabels>
+
+export const DefaultButton: Story<Props> = (props) => {
+  return <GameButtonWithChangingLabels {...props}/>;
+};
+
+DefaultButton.args = {
+  pathname: '/'
 };
