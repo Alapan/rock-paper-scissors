@@ -10,7 +10,6 @@
     "ladle": "npx ladle serve"
   },
   "dependencies": {
-    "@next/font": "^14.2.15",
     "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18"
