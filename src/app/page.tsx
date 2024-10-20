@@ -1,7 +1,7 @@
 import GameButton from './components/GameButton';
-import styles from './page.module.css';
+import styles from './LandingPage.module.css';
 
-export default function Home() {
+export default function LandingPage() {
   return (
     <div className={styles.container}>
       <section className={styles.playerSection}>
@@ -9,11 +9,11 @@ export default function Home() {
           {'Select a shape to play'}
         </div>
         <div className={styles.playerFirstRow}>
-          <GameButton assetName='rock' pathname='/game'/>
-          <GameButton assetName='scissor' pathname='/game'/>
+          <GameButton assetName='rock' pathname='/gameStatus'/>
+          <GameButton assetName='scissor' pathname='/gameStatus'/>
         </div>
         <div className={styles.playerSecondRow}>
-          <GameButton assetName='paper' pathname='/game'/>
+          <GameButton assetName='paper' pathname='/gameStatus'/>
         </div>
       </section>
     </div>

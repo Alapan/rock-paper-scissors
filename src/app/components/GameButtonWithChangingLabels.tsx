@@ -1,13 +1,9 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import GameButton from './GameButton';
 
-interface GameButtonWithChangingLabelsProps {
-  pathname: string;
-}
-
-const GameButtonWithChangingLabels = ({
-  pathname
-}: GameButtonWithChangingLabelsProps) => {
+const GameButtonWithChangingLabels = () => {
   const assetNames: string[] = ['rock', 'paper', 'scissor'];
   const [assetName, setAssetName] = useState(assetNames[0]);
 
@@ -25,7 +21,7 @@ const GameButtonWithChangingLabels = ({
 
   }, []);
 
-  return <GameButton assetName={assetName} pathname={pathname}/>;
+  return <GameButton assetName={assetName}/>;
 };
 
 export default GameButtonWithChangingLabels;
