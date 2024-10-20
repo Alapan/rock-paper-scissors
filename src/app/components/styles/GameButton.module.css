@@ -1,11 +1,22 @@
-.gameButtonCls {
-  width: 20rem;
-  height: 20rem;
+.gameButton {
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
   background: linear-gradient(145deg, #cacaca, #f0f0f0);
   box-shadow:  22px 22px 44px #bebebe,
                -22px -22px 44px #ffffff;
   border: none;
-  font-family: monospace;
-  font-size: 3rem;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 };
+
+.shapeContainer {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  position: absolute;
+}
