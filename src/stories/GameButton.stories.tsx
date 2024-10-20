@@ -13,5 +13,6 @@ type Props = ComponentProps<typeof GameButton>;
 export const Default: Story<Props> = (props) => <GameButton {...props}/>;
 
 Default.args = {
-  assetName: 'rock'
+  assetName: 'rock',
+  pathname: '/game',
 };
