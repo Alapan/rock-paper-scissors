@@ -5,12 +5,9 @@ import styles  from './styles/GameButton.module.css';
 interface GameButtonProps {
   assetName: string;
   pathname?: string;
-  buttonSize?: string;
 }
 
 const GameButton = ({ assetName, pathname }: GameButtonProps) => {
-  //const size = buttonSize || '10rem';
-
   return (
     <>
       {assetName && (
