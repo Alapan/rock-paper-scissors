@@ -14,5 +14,5 @@ export const Default: Story<Props> = (props) => <GameButton {...props}/>;
 
 Default.args = {
   assetName: 'rock',
-  pathname: '/game',
+  pathname: '/gameStatus',
 };
