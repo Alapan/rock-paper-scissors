@@ -3,7 +3,13 @@
 import { useEffect, useState } from 'react';
 import GameButton from './GameButton';
 
-const GameButtonWithChangingLabels = () => {
+interface GameButtonWithChangingLabelsProps {
+  delay: number;
+};
+
+const GameButtonWithChangingLabels = ({
+  delay
+}: GameButtonWithChangingLabelsProps) => {
   const assetNames: string[] = ['rock', 'paper', 'scissor'];
   const [assetName, setAssetName] = useState(assetNames[0]);
 
@@ -13,11 +19,11 @@ const GameButtonWithChangingLabels = () => {
     const interval = setInterval(() => {
       setAssetName(assetNames[++index]);
       if (index === assetNames.length) index = 0
-    }, 100);
+    }, 200);
 
     setTimeout(() => {
       clearInterval(interval);
-    }, 1000);
+    }, delay);
 
   }, []);
 

@@ -8,6 +8,15 @@ import styles from './GameStatus.module.css';
 export default function Game() {
   const playParams = useSearchParams();
   const assetName = playParams.get('shape') || '';
+
+  const setDelay = () => {
+    const delayOptions = [];
+    for (let i = 1000; i < 5000; i+= 1000) {
+      delayOptions.push(i);
+    }
+    return delayOptions[Math.floor(Math.random() * delayOptions.length)];
+  };
+
   return (
     <section className={styles.shapeContainer}>
       <div className={styles.playerHeading}>
@@ -20,7 +29,7 @@ export default function Game() {
         {'Computer'}
       </div>
       <div className={styles.computerChoice}>
-        <GameButtonWithChangingLabels />
+        <GameButtonWithChangingLabels delay={setDelay()}/>
       </div>
     </section>
   );
