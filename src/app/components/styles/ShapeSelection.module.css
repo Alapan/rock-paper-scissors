@@ -1,0 +1,52 @@
+.playerSection {
+  box-sizing: border-box;
+  padding: 2rem 4rem;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 0.25fr 1fr 0.5fr;
+}
+
+.playerSectionHeading {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  font-weight: 400;
+  font-size: 2rem;
+  color: purple;
+  text-align: center;
+  margin-block-start: 4rem;
+}
+
+.playerFirstRow {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  margin-block-end: 3rem;
+  grid-gap: 2.5rem;
+}
+
+.playerSecondRow {
+  grid-row-start: 4;
+  grid-row-end: 5;
+  margin-block: 1rem;
+}
+
+@media (min-width: 640px) {
+  .playerSection {
+    grid-template-columns: 0.75fr 1fr 0.75fr;
+  }
+
+  .playerSectionHeading, .playerFirstRow, .playerSecondRow {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .playerSectionHeading {
+    font-size: 3rem;
+  }
+}
