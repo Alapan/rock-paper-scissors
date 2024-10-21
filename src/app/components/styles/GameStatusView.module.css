@@ -1,0 +1,78 @@
+.shapeContainer {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 0.4fr 1fr 0.6fr 0.2fr 1fr 0.5fr;
+  margin-block: 4rem;  
+}
+
+.playerHeading, .computerHeading {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  text-align: center;
+  font-weight: 400;
+  font-size: 2rem;
+  color: purple;
+}
+
+.computerHeading {
+  margin-block-start: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playerChoice {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3; 
+}
+
+.computerChoice {
+  grid-row-start: 5;
+  grid-row-end: 6;
+  grid-column-start: 2;
+  grid-column-end: 3; 
+}
+
+@media (min-width: 768px) {
+  .playerHeading, .computerHeading {
+    font-size: 3rem;
+  }
+
+  .shapeContainer {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr 0.2fr;
+    grid-template-columns: 0.3fr 1fr 0.5fr 1fr 0.3fr;
+  }
+
+  .playerHeading {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .playerChoice {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .computerHeading {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    margin-block-start: 0;
+    display: initial;
+  }
+
+  .computerChoice {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
+  }
+}
