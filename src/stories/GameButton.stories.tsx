@@ -1,6 +1,7 @@
 import { ComponentProps } from 'react';
 import { Story, StoryDefault } from '@ladle/react';
 import GameButton from '@/app/components/GameButton';
+import { Shape } from '@/app/types';
 
 const meta: StoryDefault<typeof GameButton> = {
   title: 'Components/GameButton'
@@ -8,11 +9,10 @@ const meta: StoryDefault<typeof GameButton> = {
 
 export default meta;
 
-type Props = ComponentProps<typeof GameButton>;
+type TProps = ComponentProps<typeof GameButton>;
 
-export const Default: Story<Props> = (props) => <GameButton {...props}/>;
+export const Default: Story<TProps> = (props) => <GameButton {...props}/>;
 
 Default.args = {
-  assetName: 'rock',
-  pathname: '/gameStatus',
+  shape: Shape.ROCK,
 };
