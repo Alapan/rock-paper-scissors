@@ -8,5 +8,5 @@ const meta: StoryDefault<typeof GameButtonWithChangingLabels> = {
 export default meta;
 
 export const DefaultButton: Story = () => {
-  return <GameButtonWithChangingLabels />;
+  return <GameButtonWithChangingLabels delay={1000}/>;
 };

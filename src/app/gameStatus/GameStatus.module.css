@@ -10,7 +10,7 @@
   grid-column-end: 3;
   text-align: center;
   font-weight: 400;
-  font-size: xx-large;
+  font-size: 2rem;
   color: purple;
 }
 
@@ -36,6 +36,10 @@
 }
 
 @media (min-width: 768px) {
+  .playerHeading, .computerHeading {
+    font-size: 3rem;
+  }
+
   .shapeContainer {
     display: grid;
     grid-template-rows: 0.5fr 1fr 0.2fr;
