@@ -1,5 +1,6 @@
 import { Story, StoryDefault } from '@ladle/react';
 import GameButtonWithChangingLabels from '@/app/components/GameButtonWithChangingLabels';
+import { ComponentProps } from 'react';
 
 const meta: StoryDefault<typeof GameButtonWithChangingLabels> = {
   title: 'Components/ButtonWithChangingLabels'
@@ -7,6 +8,13 @@ const meta: StoryDefault<typeof GameButtonWithChangingLabels> = {
 
 export default meta;
 
-export const DefaultButton: Story = () => {
-  return <GameButtonWithChangingLabels delay={1000}/>;
+type TProps = ComponentProps<typeof GameButtonWithChangingLabels>;
+
+export const DefaultButton: Story<TProps> = (props) => {
+  return <GameButtonWithChangingLabels {...props}/>;
 };
+
+DefaultButton.args = {
+  delay: 1000,
+  updateGameMoves: () => undefined,
+}

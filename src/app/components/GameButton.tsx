@@ -1,30 +1,27 @@
+'use client';
+
 import Image from 'next/image';
-import Link from 'next/link';
 import styles  from './styles/GameButton.module.css';
+import { Shape } from '../types';
 
 interface GameButtonProps {
-  assetName: string;
-  pathname?: string;
+  shape: Shape;
+  onClick: (shape: Shape) => void;
 }
 
-const GameButton = ({ assetName, pathname }: GameButtonProps) => {
+const GameButton = ({ shape, onClick }: GameButtonProps) => {
   return (
     <>
-      {assetName && (
-        <Link href={{
-          pathname,
-          query: { shape: assetName }
-        }}>
-          <div className={styles.gameButton}>
-            <Image
-              src={`/${assetName}.svg`}
-              alt='Image to represent selected shape, i.e. rock/paper/scissor'
-              width={0}
-              height={0}
-              style={{ width: '55%', height: 'auto' }}
-            />
-          </div>
-        </Link>
+      {shape && (
+        <div className={styles.gameButton} onClick={() => onClick(shape)}>
+          <Image
+            src={`/${shape}.svg`}
+            alt='Image to represent selected shape, i.e. rock/paper/scissor'
+            width={0}
+            height={0}
+            style={{ width: '55%', height: 'auto' }}
+          />
+        </div>
       )}
     </>
   )
