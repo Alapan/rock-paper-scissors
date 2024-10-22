@@ -14,16 +14,9 @@
   cursor: pointer;
 }
 
-.shapeContainer {
-  width: 15vw;
-  height: 15vw;
-  border-radius: 50%;
-  position: absolute;
-}
-
 @media (min-width: 640px) {
   .gameButton {
-    width: 16vw;
-    height: 16vw;
+    width: 18vw;
+    height: 18vw;
   }
 }

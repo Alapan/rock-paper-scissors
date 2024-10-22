@@ -1,8 +1,22 @@
-.shapeContainer {
+.shapeSection {
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.5fr;
   grid-template-rows: 0.4fr 1fr 0.6fr 0.2fr 1fr 0.5fr;
-  margin-block: 4rem;  
+  margin-block-start: 4rem;  
+}
+
+.btnSection {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 0.4fr 1fr 0.4fr;
+}
+
+.btnContainer {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin-block-end: 4rem; 
+  display: flex;
+  justify-content: center; 
 }
 
 .playerHeading, .computerHeading {
@@ -40,7 +54,7 @@
     font-size: 3rem;
   }
 
-  .shapeContainer {
+  .shapeSection {
     display: grid;
     grid-template-rows: 0.5fr 1fr 0.2fr;
     grid-template-columns: 0.3fr 1fr 0.5fr 1fr 0.3fr;

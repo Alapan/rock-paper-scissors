@@ -49,4 +49,8 @@
   .playerSectionHeading {
     font-size: 3rem;
   }
+
+  .playerFirstRow {
+    grid-gap: 8rem;
+  }
 }
