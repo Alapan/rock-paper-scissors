@@ -16,7 +16,10 @@ export default function GamePage() {
   return (
     <div className={styles.container}>
       {playerMove ?
-        <GameStatusView playerMove={playerMove}/>
+        <GameStatusView
+          playerMove={playerMove}
+          clearPlayerMove={() => setPlayerMove(null)}
+        />
         : <ShapeSelectionView clickHandler={clickHandler}/>}
     </div>
   );
