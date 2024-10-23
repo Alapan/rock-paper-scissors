@@ -16,12 +16,19 @@ const GameButtonWithChangingLabels = ({
   const [shape, setShape] = useState<Shape>(Shape.ROCK);
 
   useEffect(() => {
-    let index = 0;
+    let index = 1;
+
+    const shapeToIndexMap = new Map<number, Shape>([
+      [1, Shape.PAPER],
+      [2, Shape.ROCK],
+      [3, Shape.SCISSOR],
+    ]);
 
     const interval = setInterval(() => {
-      const shapes = Object.values(Shape);
-      setShape(shapes[++index]);
-      if (index === shapes.length) index = 0
+      const shape = shapeToIndexMap.get(index);
+      if (shape) setShape(shape);
+      index = index + 1;
+      if (index === 4) index = 1;
     }, 200);
 
     setTimeout(() => {
