@@ -3,3 +3,9 @@ export enum Shape {
   PAPER = 'paper',
   SCISSOR = 'scissor',
 };
+
+export enum ResultType {
+  WIN = 'win',
+  LOSS = 'loss',
+  DRAW = 'draw',  
+};
