@@ -6,17 +6,18 @@ import { Shape } from '../types';
 
 interface GameButtonWithChangingLabelsProps {
   delay: number;
-  updateGameMoves: (shape: Shape) => void;
+  setGameResult: (shape: Shape) => void;
 };
 
 const GameButtonWithChangingLabels = ({
   delay,
-  updateGameMoves,
+  setGameResult,
 }: GameButtonWithChangingLabelsProps) => {
   const [shape, setShape] = useState<Shape>(Shape.ROCK);
 
   useEffect(() => {
     let index = 1;
+    let currentShape: Shape | undefined;
 
     const shapeToIndexMap = new Map<number, Shape>([
       [1, Shape.PAPER],
@@ -25,15 +26,15 @@ const GameButtonWithChangingLabels = ({
     ]);
 
     const interval = setInterval(() => {
-      const shape = shapeToIndexMap.get(index);
-      if (shape) setShape(shape);
+      currentShape = shapeToIndexMap.get(index);
+      if (currentShape) setShape(currentShape);
       index = index + 1;
       if (index === 4) index = 1;
     }, 200);
 
     setTimeout(() => {
       clearInterval(interval);
-      updateGameMoves(shape);
+      setGameResult(currentShape as Shape);
     }, delay);
 
   }, []);
