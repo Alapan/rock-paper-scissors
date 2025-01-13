@@ -13,7 +13,7 @@
   grid-row-end: 2;
   font-weight: 400;
   font-size: 2rem;
-  color: purple;
+  color: var(--purple-font-color);
   text-align: center;
   margin-block-start: 4rem;
 }

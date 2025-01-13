@@ -11,8 +11,20 @@ export default meta;
 
 type TProps = ComponentProps<typeof GameButton>;
 
-export const Default: Story<TProps> = (props) => <GameButton {...props}/>;
+export const Rock: Story<TProps> = (props) => <GameButton {...props}/>;
 
-Default.args = {
+Rock.args = {
   shape: Shape.ROCK,
+};
+
+export const Paper: Story<TProps> = (props) => <GameButton {...props} />;
+
+Paper.args = {
+  shape: Shape.PAPER,
+};
+
+export const Scissors: Story<TProps> = (props) => <GameButton {...props} />;
+
+Scissors.args = {
+  shape: Shape.SCISSOR,
 };

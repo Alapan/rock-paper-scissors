@@ -6,12 +6,12 @@ import { Shape } from '../types';
 
 interface GameButtonWithChangingLabelsProps {
   delay: number;
-  setGameResult: (shape: Shape) => void;
+  setGameScore: (shape: Shape) => void;
 };
 
 const GameButtonWithChangingLabels = ({
   delay,
-  setGameResult,
+  setGameScore,
 }: GameButtonWithChangingLabelsProps) => {
   const [shape, setShape] = useState<Shape>(Shape.ROCK);
 
@@ -34,7 +34,7 @@ const GameButtonWithChangingLabels = ({
 
     setTimeout(() => {
       clearInterval(interval);
-      setGameResult(currentShape as Shape);
+      setGameScore(currentShape as Shape);
     }, delay);
 
   }, []);
