@@ -11,17 +11,17 @@ interface ShapeSelectionViewProps {
 const ShapeSelectionView = ({ clickHandler }: ShapeSelectionViewProps) => {
   return (
     <section className={styles.playerSection}>
-    <div className={styles.playerSectionHeading}>
-      {'Select a shape to play'}
-    </div>
-    <div className={styles.playerFirstRow}>
-      <GameButton shape={Shape.ROCK} onClick={clickHandler} />
-      <GameButton shape={Shape.PAPER} onClick={clickHandler} />
-    </div>
-    <div className={styles.playerSecondRow}>
-      <GameButton shape={Shape.SCISSOR} onClick={clickHandler} />
-    </div>
-  </section>
+      <div className={styles.playerSectionHeading}>
+        {'Select a shape to play'}
+      </div>
+      <div className={styles.playerFirstRow}>
+        <GameButton shape={Shape.ROCK} onClick={clickHandler} />
+        <GameButton shape={Shape.PAPER} onClick={clickHandler} />
+      </div>
+      <div className={styles.playerSecondRow}>
+        <GameButton shape={Shape.SCISSOR} onClick={clickHandler} />
+      </div>
+    </section>
   );
 };
 

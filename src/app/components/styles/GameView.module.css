@@ -25,7 +25,7 @@
   text-align: center;
   font-weight: 400;
   font-size: 2rem;
-  color: purple;
+  color: var(--purple-font-color);
 }
 
 .computerHeading {

@@ -1,0 +1,19 @@
+.scoreContainer {
+  text-align: center;
+  padding-block-start: 2rem;
+
+}
+
+.score {
+  display: inline-block;
+  color: var(--purple-font-color);
+  margin-inline-end: 1rem;
+  font-size: larger;
+}
+
+@media (min-width: 1024px) {
+  .score {
+    display: inline-block;
+    font-size: xx-large;
+  }
+}

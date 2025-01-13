@@ -1,21 +1,28 @@
 'use client';
 
-import { useState } from 'react';
-import GameButton from '../components/GameButton';
-import GameButtonWithChangingLabels from '../components/GameButtonWithChangingLabels';
-import { ResultType, Shape } from '../types';
+import JSConfetti from 'js-confetti';
+import GameButton from './GameButton';
+import GameButtonWithChangingLabels from './GameButtonWithChangingLabels';
+import { ResultType, ScoreState, Shape } from '../types';
 import PlayAgainButton from './PlayAgainButton';
-import styles from './styles/GameStatusView.module.css';
+import ScoresView from './ScoresView';
+import styles from './styles/GameView.module.css';
 
 interface GameStatusViewProps {
   playerMove: Shape;
   clearPlayerMove: () => void;
+  score: ScoreState;
+  updateScore: (result: ResultType) => void;
 };
 
-const GameStatusView = ( { playerMove, clearPlayerMove }: GameStatusViewProps) => {
+const jsConfetti = new JSConfetti();
 
-  const [ result, setResult ] = useState<ResultType | null>(null);
-
+const GameStatusView = ({
+  playerMove,
+  clearPlayerMove,
+  score,
+  updateScore,
+}: GameStatusViewProps) => {
   const setDelay = () => {
     const delayOptions = [];
     for (let i = 1000; i < 5000; i+= 1000) {
@@ -24,10 +31,10 @@ const GameStatusView = ( { playerMove, clearPlayerMove }: GameStatusViewProps) =
     return delayOptions[Math.floor(Math.random() * delayOptions.length)];
   };
 
-  const setGameResult = (shape: Shape) => {
+  const setGameScore = (shape: Shape) => {
     const computerMove = shape;
     if (playerMove === computerMove) {
-      setResult(ResultType.DRAW);
+      updateScore(ResultType.DRAW)
     } else {
       const playerWinningCombinations = [
         [Shape.ROCK, Shape.SCISSOR],
@@ -46,15 +53,19 @@ const GameStatusView = ( { playerMove, clearPlayerMove }: GameStatusViewProps) =
       }
 
       if (isPlayerWinner) {
-        setResult(ResultType.WIN);
+        updateScore(ResultType.WIN);
+        jsConfetti.addConfetti();
       } else {
-        setResult(ResultType.LOSS);
+        updateScore(ResultType.LOSS);
       }
     }
   };
 
   return (
     <>
+      <section className={styles.scoreSection}>
+        <ScoresView score={score}/>
+      </section>
       <section className={styles.shapeSection}>
         <div className={styles.playerHeading}>
           {'Player'}
@@ -68,7 +79,7 @@ const GameStatusView = ( { playerMove, clearPlayerMove }: GameStatusViewProps) =
         <div className={styles.computerChoice}>
           <GameButtonWithChangingLabels
             delay={setDelay()}
-            setGameResult={setGameResult}
+            setGameScore={setGameScore}
           />
         </div>
       </section>
@@ -77,9 +88,6 @@ const GameStatusView = ( { playerMove, clearPlayerMove }: GameStatusViewProps) =
           <PlayAgainButton onClick={clearPlayerMove}/>
         </div>
       </section>
-      { result === ResultType.WIN ? <></> : (
-        ResultType.LOSS ? <></> : <></>
-      )}
     </>
   );  
 };

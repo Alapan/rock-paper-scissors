@@ -9,3 +9,9 @@ export enum ResultType {
   LOSS = 'loss',
   DRAW = 'draw',  
 };
+
+export interface ScoreState {
+  playerWins: number;
+  computerWins: number;
+  draws: number;
+};

@@ -1,6 +1,6 @@
+import { ComponentProps } from 'react';
 import { Story, StoryDefault } from '@ladle/react';
 import GameButtonWithChangingLabels from '@/app/components/GameButtonWithChangingLabels';
-import { ComponentProps } from 'react';
 
 const meta: StoryDefault<typeof GameButtonWithChangingLabels> = {
   title: 'Components/ButtonWithChangingLabels'
@@ -16,5 +16,5 @@ export const DefaultButton: Story<TProps> = (props) => {
 
 DefaultButton.args = {
   delay: 1000,
-  updateGameMoves: () => undefined,
-}
+  setGameScore: () => null,
+};

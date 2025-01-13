@@ -8,7 +8,7 @@
                -22px -22px 44px #ffffff;
   font-size: x-large;
   font-weight: 400;
-  color: purple;
+  color: var(--purple-font-color);
   cursor: pointer;
 }
 
